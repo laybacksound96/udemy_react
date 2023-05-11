@@ -1,5 +1,13 @@
+import { styled } from "styled-components";
 import classes from "./AvailableMeals.module.css";
 import MealCard from "./MealCard";
+
+const MealCardComponent = styled.section`
+  padding: 1rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+  border-radius: 14px;
+  background-color: white;
+`;
 
 const DUMMY_MEALS = [
   {
@@ -27,12 +35,15 @@ const DUMMY_MEALS = [
     price: 18.99,
   },
 ];
+
 const AvailableMeals = () => {
-  const mealList = DUMMY_MEALS.map((meal) => <MealCard mealProp={meal} />);
+  const mealList = DUMMY_MEALS.map((meal) => (
+    <MealCard mealProp={meal} key={meal.id} />
+  ));
   return (
-    <section className={classes.meals}>
+    <MealCardComponent className={classes.meals}>
       <ul>{mealList}</ul>
-    </section>
+    </MealCardComponent>
   );
 };
 
