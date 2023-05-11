@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import MealItemForm from "./MealItemForm";
 
 const Meal = styled.div`
   display: flex;
@@ -31,6 +32,7 @@ const MealCard = ({ mealProp }) => {
         <Description>{mealProp.description}</Description>
         <Price>$ {mealProp.price}</Price>
       </div>
+      <MealItemForm />
     </Meal>
   );
 };
